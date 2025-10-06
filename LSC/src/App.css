@@ -7,6 +7,11 @@
 
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 /* navbar */
 
 .nav-div {
@@ -20,12 +25,48 @@
     
 }
 
+.logo-div {
+  text-align: center;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.logo-div h1 {
+   font-size: 1.4rem;
+}
+
+.logo-div p {
+  font-style: italic;
+}
+
+.user-enter-img {
+  width: 60px;
+}
+.navLinks {
+    display: flex;
+    align-items: Center;
+}
+
+.navLink {
+  margin-right: 50px;
+  cursor: pointer;
+}
+
+.nav-link {
+  font-family: var(--subtext);
+  font-size: 1.4rem;
+}
+
+.nav-link:hover {
+   text-decoration: underline;
+   font-size: 1.6rem;
+}
 /* App */
 
-* {
-  margin: 0;
-  padding: 0;
-}
+
 
 .background-img {
    width: 100%;
