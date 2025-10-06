@@ -9,7 +9,13 @@ function App() {
     <>
       <img className="background-img" src={backgroundImage}></img>
       <div className='main-page'>
- <h1>This is the resources page for now</h1>
+        <div className='main-header'>
+          <h1>Resources</h1>
+        <p>This is your one stop destination to find study resources.
+           From study guides to exam timetables it is all found right here. 
+        </p>
+        </div>
+        
       </div>
      
     </>
