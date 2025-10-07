@@ -8,10 +8,10 @@ import  AddItem from './components/addItem.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    {/* <Navbar /> */}
-    <AddItem />
-    <App />
-    {/* <Study /> */}
+    <Navbar />
+    {/* <AddItem /> */}
+    {/* <App /> */}
+    <Study />
     {/* <Planner /> */}
   </StrictMode>
 )
