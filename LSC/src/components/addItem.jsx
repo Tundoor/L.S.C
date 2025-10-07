@@ -1,7 +1,7 @@
 function AddItem () {
    return (
     <>
-   <div className="overlay"></div>
+   <div className="overlay">
    <form className="addItemForm">
     <h1>Contribute by adding a resource</h1>
        <label>Add Link Name:</label>
@@ -18,7 +18,7 @@ function AddItem () {
         <button id="cancelAddItem">Cancel</button>
         <button id="submitItem" >Submit</button>
        </div>
-   </form>
+   </form></div>
    </>
    )
 }
