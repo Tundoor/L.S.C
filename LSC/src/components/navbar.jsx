@@ -1,4 +1,4 @@
-import userImg from './assets/mingcute_user-4-fill.svg'
+import userImg from '../assets/mingcute_user-4-fill.svg'
 
 function Navbar() {
       return (

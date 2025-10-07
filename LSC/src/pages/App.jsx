@@ -17,7 +17,6 @@ function App() {
         </div>
         
         <div className='resources-div'>
-          
           <select name="All" className="selection">
             <option value="All">All</option>
             <option value="gradeEight">Grade 8</option>
@@ -26,9 +25,10 @@ function App() {
             <option value="gradeEleven">Grade 11</option>
             <option value="gradeTwelve">Grade 12</option>
           </select>
-
           <button className='AddItem'>Add Item</button>
         </div>
+
+        <div className='resource-links-div'></div>
        </div>
      
     </>

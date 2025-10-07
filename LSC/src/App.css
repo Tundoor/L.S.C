@@ -98,11 +98,13 @@
   position: absolute;
   right: 0;
   margin-right: 70px;
-
+  margin-bottom: 100px;
 }
 
 .selection {
   text-align: center;
+  -webkit-appearance: none; 
+  appearance: none;
 }
 .selection, .AddItem {
   width: 150px;
@@ -119,4 +121,67 @@
 
 .selection:hover , .AddItem:hover {
    background-color: #343f44;
+}
+
+.addItemForm {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #A1C2BD;
+  border-style: none;
+  border-radius: 10px;
+  padding: 50px;
+  position: absolute; 
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.addItemsBtns {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.addItemsBtns button {
+  width: 250px;
+  height: 40px;
+  border-style: none;
+  border-radius: 5px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff6e1;
+  font-family: var(--subtext);
+  background-color:  #708993;
+}
+
+.addItemsBtns button:hover {
+  background-color:  #39454A;
+}
+
+.addItemForm h1{
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: var(--title);
+  letter-spacing: 2px;
+  color: #fff6e1;
+}
+
+.addItemForm label{
+  font-size: 1.4rem;
+  font-family: var(--subtext);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: #fff6e1;
+}
+
+.addItemForm input {
+  height: 40px;
+  font-size: 1.2rem;
+}
+
+.addItemForm input::placeholder {
+  color: #343f444a;
 }
