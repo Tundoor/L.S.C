@@ -1,4 +1,5 @@
 import userImg from '../assets/mingcute_user-4-fill.svg'
+import { Link } from "react-router-dom"
 
 function Navbar() {
       return (
@@ -9,13 +10,12 @@ function Navbar() {
            <p>Grab Your Future</p>
         </div>
         <div className="navLinks">
-           <a className="navLink nav-link">Home </a>
-           <a className="navLink nav-link">Study </a>
-           <a className="navLink nav-link">Planner </a>
-           <a className="navLink nav-link">Connect </a>
-           <a className="navLink">
+           <Link className="navLink nav-link" to="/">Home </Link>
+           <Link className="navLink nav-link" to="/study">Study </Link>
+           <Link className="navLink nav-link"to="/connect">Connect </Link>
+           <Link className="navLink">
              <img src={userImg} alt="user-symbol" className='user-enter-img'></img>
-           </a>
+           </Link>
         </div>
         </div>
         </>
