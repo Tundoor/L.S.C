@@ -12,6 +12,7 @@ function Navbar() {
            <a className="navLink nav-link">Home </a>
            <a className="navLink nav-link">Study </a>
            <a className="navLink nav-link">Planner </a>
+           <a className="navLink nav-link">Connect </a>
            <a className="navLink">
              <img src={userImg} alt="user-symbol" className='user-enter-img'></img>
            </a>
