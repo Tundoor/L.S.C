@@ -1,9 +1,16 @@
 
 import '../App.css'
 import backgroundImage from '../assets/-Aristole.png'
+import AddItem from "../components/addItem"
+import { useState } from "react"
 
 function App() {
-  
+ 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
 
   return (
     <>
@@ -26,7 +33,8 @@ function App() {
             <option value="gradeEleven">Grade 11</option>
             <option value="gradeTwelve">Grade 12</option>
           </select>
-          <button className='AddItem'>Add Item</button>
+          <button className='AddItem' onClick={openModal}>Add Item</button>
+          <AddItem isOpen={isModalOpen} onClose={closeModal}/>
         </div>
 
         <div className='resource-links-div'></div>
