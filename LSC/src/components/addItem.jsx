@@ -18,14 +18,14 @@ function AddItem({ isOpen, onClose }) {
                 <form className="addItemForm">
                     <h1>Contribute by adding a resource</h1>
                     <label>Add Link Name:</label>
-                    <input type="text" placeholder="eg. Exam paper one"></input>
+                    <input type="text" placeholder="eg. Exam paper one" required></input>
                     <label>Add Link URL:</label>
-                    <input type="text" placeholder="eg. www.geteducated.co.va"></input>
+                    <input type="text" placeholder="eg. www.geteducated.co.va" required></input>
                     <label>Resource for what grade?
                     </label>
                     <input type="text" placeholder="(Please only enter grade 8 - 12)"></input>
                     <label>Resource type:</label>
-                    <input type="text" placeholder="eg. Past paper, video, study guide, memo, website"></input>
+                    <input type="text" placeholder="eg. Past paper, video, study guide, memo, website" required></input>
                     <label>Add File:</label>
                     <input type="file"></input>
                     <div className="addItemsBtns">

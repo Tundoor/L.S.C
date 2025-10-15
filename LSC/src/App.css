@@ -101,8 +101,9 @@
 .resources-div {
   position: absolute;
   right: 0;
-  margin-right: 70px;
+  margin-right: 50px;
   margin-bottom: 100px;
+  width: 100;
 }
 
 .selection {
@@ -127,6 +128,48 @@
    background-color: #343f44;
 }
 
+.main-resource-div {
+  margin-top: 200px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: #7089932a;
+  padding: 20px;
+}
+
+.resource {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resource h1 {
+  font-family: var(--link);
+  font-size: 1.5rem;
+}
+.resource h2 {
+  font-size: 1.2rem;
+  font-family: var(--subtext);
+  margin-right: 20px;
+  color: #343f4487;
+}
+
+.resource a {
+  font-size: 1.2rem;
+  font-family: var(--subtext);
+  font-weight: 800;
+  color: #708993;
+}
+.download {
+  text-decoration: none;
+}
+
+.info-div {
+  display: flex;
+  align-items: center;
+}
 
 /* Add items modal */
 
@@ -266,3 +309,4 @@
 .AddConnectBtn:hover {
   background-color:  #39454A;
 }
+
