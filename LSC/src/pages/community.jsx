@@ -1,6 +1,16 @@
 import backgroundImageTwo from "../assets/-James humes.png"
+import AddConnection from "../components/addConnection.jsx"
+import { useState } from "react"
 
 function community() {
+
+   const [ isModalOpen, setIsModalOpen ] = useState(false)
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+
+
     return (
         <>
             <img className="background-img"
@@ -14,7 +24,8 @@ function community() {
                     </p>
                 </div>
                  <div className='resources-div'>
-                  <button className='AddConnectBtn'>Add Connection</button>
+                  <button className='AddConnectBtn' onClick={openModal}>Add Connection</button>
+                  <AddConnection isOpen={isModalOpen} onClose={closeModal}/>
                  </div>
                 <div className="TandC'sDiv">
                   <p className="terms&conditions"></p>

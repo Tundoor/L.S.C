@@ -37,7 +37,19 @@ function App() {
           <AddItem isOpen={isModalOpen} onClose={closeModal}/>
         </div>
 
-        <div className='resource-links-div'></div>
+        <div className='resource-links-div'>
+           <div className='resource'>
+              <h1>Exam Paper 2 2015</h1>
+              <div className='grade-div'>
+              <h2>Grade: 10</h2>
+              </div>
+              <h2>Type: Past Paper</h2>
+              <div className='downloadDiv'>
+                <h2>Download:</h2>
+                <a href='' download>Link name</a>
+              </div>
+           </div>
+        </div>
        </div>
      
     </>

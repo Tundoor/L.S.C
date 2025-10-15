@@ -5,6 +5,7 @@ import App from './pages/App.jsx'
 import Study from './pages/study.jsx'
 import Navbar from './components/navbar.jsx'
 import  AddItem from './components/addItem.jsx'
+import AddConnection from "./components/addConnection.jsx"
 import Community from './pages/community.jsx'
 
 createRoot(document.getElementById('root')).render(
