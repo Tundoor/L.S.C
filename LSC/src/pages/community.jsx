@@ -27,6 +27,17 @@ function community() {
                   <button className='AddConnectBtn' onClick={openModal}>Add Connection</button>
                   <AddConnection isOpen={isModalOpen} onClose={closeModal}/>
                  </div>
+                 <div className='main-resource-div'>
+                    <div className='resource-links-div'>
+                        <div className='resource'>
+                            <h1 className="groupName">Group xyz</h1>
+                            <div className='info-div'>
+                                    <a href='' className='download join'>Join Group</a>               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="TandC'sDiv">
                   <p className="terms&conditions"></p>
                 </div>
