@@ -1,3 +1,59 @@
+import { createServer } from "miragejs"
+
+let server = createServer()
+server.get("/api/resources", { 
+                                 resources: [
+                                   
+                                  { 
+       id: 1,
+       fileName: "Maths Past Paper 2020 March (FET)",
+       fileURL: "https://stanmorephysics.com/wp-content/uploads/2020/03/Maths-grade-12-March-2020-1.pdf",
+       grade: "12",
+       type: "past papaer",
+       file: ""
+     },
+
+      { 
+       id: 1,
+       fileName: "Maths Past Paper 2020 March P2 (FET)",
+       fileURL: "https://stanmorephysics.com/wp-content/uploads/2020/03/Maths-grade-12-March-2020-1.pdf",
+       grade: "12",
+       type: "past papaer",
+       file: ""
+     },
+
+      { 
+       id: 1,
+       fileName: "Maths Past Paper 2020 June P1 (FET)",
+       fileURL: "https://stanmorephysics.com/wp-content/uploads/2020/03/Maths-grade-12-March-2020-1.pdf",
+       grade: "12",
+       type: "past papaer",
+       file: ""
+     },
+
+      { 
+       id: 1,
+       fileName: "Maths Past Paper 2020 June P2(FET)",
+       fileURL: "https://stanmorephysics.com/wp-content/uploads/2020/03/Maths-grade-12-March-2020-1.pdf",
+       grade: "12",
+       type: "past papaer",
+       file: ""
+     },
+
+      { 
+       id: 1,
+       fileName: "Maths Past Paper 2020 Sept P1(FET)",
+       fileURL: "https://stanmorephysics.com/wp-content/uploads/2020/03/Maths-grade-12-March-2020-1.pdf",
+       grade: "12",
+       type: "past papaer",
+       file: ""
+     }
+                                
+                                
+                                ] 
+                                })
+
+
 let data = [
      { 
        id: "",
