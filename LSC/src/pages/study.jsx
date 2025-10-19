@@ -1,52 +1,99 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
-function Study () {
-   const [ hours, setHours ] = useState(0)
-   const [ minutes, setMinutes] = useState(0)
-   const [ seconds, setSeconds ] = useState(0)
-   let timer; 
-    
-   useEffect(() => {
-       
-    timer = setInterval(() => {
-
-    }, 1000)
-   })
-
-
- return(
-    <div className="timer-div">
-    <div className="timer-intro">
-        <h1>Study Timer</h1>
-        <p>The Pomodoro technique is highly effective for studying because it helps improve focus
-             and productivity while preventing burnout. By breaking study time into short, timed 
-             intervals you train your brain to concentrate deeply without distractions.</p>
-    </div>
-    <div className="preset-timers">
-        <button className="pom-timer">Deep Work</button>
-        <button className="pom-timer">Balanced</button>
-        <button className="pom-timer">Classic</button>
-    </div>
-    <div className="timer">
-        <h1 className="time hours">00:25:00</h1>
-    </div>
-    <div className="timer-btn">
-        <button onClick={() => { onBreak() }}>Break</button>
-        <button onClick={() => { onPause() }}>Pause</button>
-        <button onClick={() => { onStart() }}>Start</button>
-    </div>
-    {/* <div className="add-timer">
-        <div className="add-timer-btn-div">
-            <button clanssName="add-timer-btn">Add timer</button>
-        </div>
-        <div className="dif-timers">
-            <div className="timer">
-                <h1>timer 1</h1>
-            </div>
-        </div>
-    </div> */}
-    </div>
- )
-
+function formatTime(totalSeconds) {
+  const hrs = Math.floor(totalSeconds / 3600)
+  const mins = Math.floor((totalSeconds % 3600) / 60)
+  const secs = totalSeconds % 60
+  const pad = (n) => String(n).padStart(2, "0")
+  return `${pad(hrs)}:${pad(mins)}:${pad(secs)}`
 }
-export default  Study 
+
+function Study() {
+  // total seconds remaining
+  const [secondsLeft, setSecondsLeft] = useState(25 * 60) // default 25m
+  const [isRunning, setIsRunning] = useState(false)
+  const timerRef = useRef(null)
+
+  // Preset handlers
+  const setPreset = (minutes) => {
+    setIsRunning(false)
+    clearInterval(timerRef.current)
+    setSecondsLeft(minutes * 60)
+  }
+
+  // Start the countdown
+  const onStart = () => {
+    if (isRunning) return
+    setIsRunning(true)
+  }
+
+  // Pause the countdown
+  const onPause = () => {
+    setIsRunning(false)
+  }
+
+  // Break (short break 5 minutes)
+  const onBreak = () => {
+    setIsRunning(false)
+    clearInterval(timerRef.current)
+    setSecondsLeft(5 * 60)
+  }
+
+  // Reset to default 25:00
+  const onReset = () => {
+    setIsRunning(false)
+    clearInterval(timerRef.current)
+    setSecondsLeft(25 * 60)
+  }
+
+  useEffect(() => {
+    if (isRunning) {
+      timerRef.current = setInterval(() => {
+        setSecondsLeft((s) => {
+          if (s <= 1) {
+            clearInterval(timerRef.current)
+            setIsRunning(false)
+            return 0
+          }
+          return s - 1
+        })
+      }, 1000)
+    }
+
+    return () => clearInterval(timerRef.current)
+  }, [isRunning])
+
+  return (
+    <div className="timer-div">
+      <div className="timer-intro">
+        <h1>Study Timer</h1>
+        <p>
+          The Pomodoro technique helps improve focus by breaking work into
+          short, timed intervals. Use presets or custom controls below.
+        </p>
+      </div>
+
+      <div className="preset-timers">
+        <button className="pom-timer" onClick={() => setPreset(50)}>Deep Work (50m)</button>
+        <button className="pom-timer" onClick={() => setPreset(40)}>Balanced (40m)</button>
+        <button className="pom-timer" onClick={() => setPreset(25)}>Classic (25m)</button>
+      </div>
+
+      <div className="timer">
+        <h1 className="time hours">{formatTime(secondsLeft)}</h1>
+      </div>
+
+      <div className="timer-btn">
+        <button onClick={onBreak}>Break (5m)</button>
+        {isRunning ? (
+          <button onClick={onPause}>Pause</button>
+        ) : (
+          <button onClick={onStart}>Start</button>
+        )}
+        <button onClick={onReset}>Reset</button>
+      </div>
+    </div>
+  )
+}
+
+export default Study
