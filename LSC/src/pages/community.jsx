@@ -17,7 +17,11 @@ function getSavedCommunications() {
 
 function community() {
  
-    // localStorage.clear();
+const [communications, setCommunications] = useState(() => getSavedCommunications());
+
+    useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(communications));
+  }, [communications]);
 
   const [ isModalOpen, setIsModalOpen ] = useState(false)
 
@@ -25,7 +29,10 @@ function community() {
   const closeModal = () => setIsModalOpen(false);
   const STORAGE_KEY = "communications";
 
-  const [communications, setCommunications] = useState(() => getSavedCommunications());
+  const addCommunication = (newItem) => {
+    setCommunications(prev => [...prev, newItem]); // update state immediately
+    closeModal(); // close the modal after adding
+};
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(communications));
@@ -45,7 +52,7 @@ function community() {
                 </div>
                  <div className='resources-div'>
                   <button className='AddConnectBtn' onClick={openModal}>Add Connection</button>
-                  <AddConnection isOpen={isModalOpen} onClose={closeModal}/>
+                  <AddConnection isOpen={isModalOpen} onClose={closeModal} addCommunication={addCommunication} />
                  </div>
                 
                <div className="comms-div">

@@ -64,9 +64,7 @@ function AddItem({ isOpen, onClose }) {
         const updated = [...current, newItem]
         saveResources(updated)
 
-        // Notify the app so it can read localStorage and update UI
-        window.dispatchEvent(new CustomEvent("resourcesUpdated", { detail: updated }))
-
+        // setTimeout(() => window.location.reload(), 60)
         // reset and close
         setFormData({ fileName: "", fileURL: "", grade: "", type: "", file: "" })
         onClose()

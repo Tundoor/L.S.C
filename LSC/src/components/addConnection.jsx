@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { communication } from "../assets/data"
 
-function addConnection ({ isOpen, onClose }) {
+function addConnection ({ isOpen, onClose, addCommunication }) {
 
     const [formData, setFormData] = useState({
         name: "",
@@ -59,8 +59,8 @@ function addConnection ({ isOpen, onClose }) {
         const updated = [...current, newItem]
         saveCommunications(updated)
 
-        
-
+            addCommunication(newItem);
+        // setTimeout(() => window.location.reload(), 60)
             setFormData({ name: "", groupLink: "", app: "" })
             onClose()
         }
