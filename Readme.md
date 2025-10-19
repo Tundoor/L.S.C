@@ -11,7 +11,7 @@
 
 [Watch Demo Video](https://drive.google.com/file/d/1RgawD1G-WekD5HWNypO4Po6XTNmWjtsX/view?usp=sharing)
 
-<h1>Screenshots of appp</h1>
+<h1>Screenshots of App</h1>
 
 <img src="./assets/home hero.png">
 <img src="./assets/resources.png">
@@ -20,3 +20,6 @@
 <img src="./assets/comms hero.png">
 <img src="./assets/comms.png">
 <img src="./assets/add group.png">
+
+<h1>Instruction of use</h1>
+<p>In order to open the app since it is not deployed you will begin by open the repo in your code editor. Once the repo is open, open the terminal and change the directory of the file by running the command ( cd LSC ). Then run the command npm install (Ensure you have node.js downloaded or it will not work). Once the node modules are installed, run the command npm run dev. This will run the development server and then control click to open the app. (Note, on macOS to click it is command click).</p>
