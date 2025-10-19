@@ -18,7 +18,6 @@ function getSavedResources() {
 }
 
 function App() {
-
     const [isModalOpen, setIsModalOpen] = useState(false);
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -28,6 +27,12 @@ function App() {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(resources));
   }, [resources]);
+
+
+  const addResource = (newItem) => {
+    setResources(prev => [...prev, newItem]); // update state immediately
+    closeModal();
+  };
 
     return (
         <>
@@ -43,18 +48,10 @@ function App() {
 
                 <div className='resources-div'>
                     <div className='resource-btns'>
-                        {/* <select name="All" className="selection">
-                            <option value="All">All</option>
-                            <option value="gradeEight">Grade 8</option>
-                            <option value="gradeNine">Grade 9</option>
-                            <option value="gradeTen">Grade 10</option>
-                            <option value="gradeEleven">Grade 11</option>
-                            <option value="gradeTwelve">Grade 12</option>
-                        </select> */}
                         <button className='AddItem'
                             onClick={openModal}>Add Item</button>
                         <AddItem isOpen={isModalOpen}
-                            onClose={closeModal}/>
+                            onClose={closeModal} addResource={addResource}/>
                     </div>
                 </div>
             <div className='exam-div'>

@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react"
 import  resources  from "../assets/data"
 
-function AddItem({ isOpen, onClose }) {
+function AddItem({ isOpen, onClose, addResource }) {
       
     const [formData, setFormData] = useState({
         // starting values for the form
         fileName: "",
         fileURL: "",
         grade: "",
-        type: "",
-        file: ""
+        type: ""
     })
     
     if (!isOpen) return null;
@@ -51,8 +50,6 @@ function AddItem({ isOpen, onClose }) {
             fileURL: formData.fileURL.trim(),
             grade: formData.grade.trim(),
             type: formData.type.trim(),
-            // file handling would need uploading; we just store filename if provided
-            file: formData.file
         }
 
         if (!newItem.fileName || !newItem.fileURL) {
@@ -66,6 +63,7 @@ function AddItem({ isOpen, onClose }) {
 
         // setTimeout(() => window.location.reload(), 60)
         // reset and close
+        addResource(newItem); 
         setFormData({ fileName: "", fileURL: "", grade: "", type: "", file: "" })
         onClose()
     }
@@ -111,11 +109,11 @@ function AddItem({ isOpen, onClose }) {
                         onChange={e => setFormData({ ...formData, type: e.target.value })}
                     />
 
-                    <label>Add File (optional):</label>
+                    {/* <label>Add File (optional):</label>
                     <input
                         type="file"
                         onChange={e => setFormData({ ...formData, file: e.target.files?.[0]?.name ?? "" })}
-                    />
+                    /> */}
 
                     <div className="addItemsBtns">
                         <button id="cancelAddItem" type="button" onClick={closeModal}>Cancel</button>

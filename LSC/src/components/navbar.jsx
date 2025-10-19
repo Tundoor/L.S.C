@@ -6,8 +6,8 @@ function Navbar() {
         <>
         <div className='nav-div'>
         <div className="logo-div">
-           <h1>LEARN STUDY CONNECT</h1>
-           <p>Grab Your Future</p>
+           <h1>STUDYECT</h1>
+           <p>Learn . Study . Connect</p>
         </div>
         <div className="navLinks">
            <Link className="navLink nav-link" to="/">Home </Link>
