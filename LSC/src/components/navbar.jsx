@@ -13,9 +13,6 @@ function Navbar() {
            <Link className="navLink nav-link" to="/">Home </Link>
            <Link className="navLink nav-link" to="/study">Study </Link>
            <Link className="navLink nav-link"to="/connect">Connect </Link>
-           <Link className="navLink">
-             <img src={userImg} alt="user-symbol" className='user-enter-img'></img>
-           </Link>
         </div>
         </div>
         </>

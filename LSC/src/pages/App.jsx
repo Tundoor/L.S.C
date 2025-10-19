@@ -2,6 +2,7 @@ import '../App.css'
 import backgroundImage from '../assets/-Aristole.png'
 import AddItem from "../components/addItem"
 import {useState} from "react"
+import  resources  from '../assets/data.js'
 
 function App() {
 
@@ -39,19 +40,23 @@ function App() {
                             onClose={closeModal}/>
                     </div>
                 </div>
+            <div className='exam-div'>
+                {resources.map((data) => ( 
                 <div className='main-resource-div'>
                     <div className='resource-links-div'>
                         <div className='resource'>
-                            <h1>Exam Paper 2 2015</h1>
+                            <h1>{data.fileName}</h1>
                             <div className='info-div'>
-                               <h2 className='type'>Past Paper</h2>
+                               <h2 className='type'>{data.type}</h2>
                                 <div className='grade-div'>
-                                    <h2>Grade: 10</h2>
+                                    <h2>Grade: {data.grade}</h2>
                                 </div>
-                                    <a href='' download className='download'>Download</a>               
+                                    <a href={data.fileURL} download className='download'>Download</a>               
                             </div>
                         </div>
                     </div>
+                   </div>
+                   ))}
                 </div>
             </div>
 

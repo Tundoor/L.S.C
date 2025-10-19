@@ -1,6 +1,7 @@
 import backgroundImageTwo from "../assets/-James humes.png"
 import AddConnection from "../components/addConnection.jsx"
 import { useState } from "react"
+import { communication } from "../assets/data.js"
 
 function community() {
 
@@ -27,17 +28,22 @@ function community() {
                   <button className='AddConnectBtn' onClick={openModal}>Add Connection</button>
                   <AddConnection isOpen={isModalOpen} onClose={closeModal}/>
                  </div>
+                
+               <div className="comms-div">
+             {communication.map((data) => (  
                  <div className='main-resource-div'>
                     <div className='resource-links-div'>
                         <div className='resource'>
-                            <h1 className="groupName">Group xyz</h1>
+                            <h1 className="groupName">{data.name}</h1>
                             <div className='info-div'>
-                                    <a href='' className='download join'>Join Group</a>               
+                                   <h2 className='type'>{data.app}</h2>
+                                    <a href={data.groupLink} className='download join' target="_blank">Join Group</a>               
                             </div>
                         </div>
                     </div>
                 </div>
-
+                ))}
+</div>
                 <div className="TandC'sDiv">
                   <p className="terms&conditions"></p>
                 </div>

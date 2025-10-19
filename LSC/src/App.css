@@ -128,8 +128,11 @@
    background-color: #343f44;
 }
 
-.main-resource-div {
+.exam-div, .comms-div {
   margin-top: 200px;
+  margin-bottom: 50px;
+}
+.main-resource-div {
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom: 20px;
