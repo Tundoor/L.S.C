@@ -7,6 +7,16 @@
 <h1>Areas of improvement</h1> 
 <p>The website is still on it's very first version and needs lots of hardwork and polishing to get it to its final stage. But currently it perfectly encapsulates the idea I was going for and give me inspiration that with hard work and retouching on it, it will become something absolutely amazing.</p>
 
-<h1>Live demo of app</h11>
+<h1>Live demo of app</h1>
 
 [Watch Demo Video](https://drive.google.com/file/d/1RgawD1G-WekD5HWNypO4Po6XTNmWjtsX/view?usp=sharing)
+
+<h1>Screenshots of appp</h1>
+
+<img src="./assets/home hero.png">
+<img src="./assets/resources.png">
+<img src="./assets/add resource.png">
+<img src="./assets/timer.png">
+<img src="./assets/comms hero.png">
+<img src="./assets/comms.png">
+<img src="./assets/add group.png">
