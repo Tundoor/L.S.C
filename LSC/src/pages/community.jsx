@@ -1,16 +1,35 @@
 import backgroundImageTwo from "../assets/-James humes.png"
 import AddConnection from "../components/addConnection.jsx"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { communication } from "../assets/data.js"
 
-function community() {
+function getSavedCommunications() {
+  const STORAGE_KEY = "communications";
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [...(communication || [])];
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error("Failed to read localStorage, using defaults", e);
+    return [...(communication || [])];
+  }
+}
 
-   const [ isModalOpen, setIsModalOpen ] = useState(false)
+function community() {
+ 
+    // localStorage.clear();
+
+  const [ isModalOpen, setIsModalOpen ] = useState(false)
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const STORAGE_KEY = "communications";
 
+  const [communications, setCommunications] = useState(() => getSavedCommunications());
 
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(communications));
+  }, [communications]);
 
     return (
         <>
@@ -30,7 +49,7 @@ function community() {
                  </div>
                 
                <div className="comms-div">
-             {communication.map((data) => (  
+             {communications.map((data) => (  
                  <div className='main-resource-div'>
                     <div className='resource-links-div'>
                         <div className='resource'>
