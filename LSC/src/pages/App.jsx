@@ -1,16 +1,33 @@
 import '../App.css'
 import backgroundImage from '../assets/-Aristole.png'
 import AddItem from "../components/addItem"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import  resources  from '../assets/data.js'
+
+
+function getSavedResources() {
+  const STORAGE_KEY = "resources";
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return [...(resources || [])];
+    return JSON.parse(raw);
+  } catch (e) {
+    console.error("Failed to read localStorage, using defaults", e);
+    return [...(resources || [])];
+  }
+}
 
 function App() {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
+    const STORAGE_KEY = "resources";
+    const [resources, setResources] = useState(() => getSavedResources());
 
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(resources));
+  }, [resources]);
 
     return (
         <>
