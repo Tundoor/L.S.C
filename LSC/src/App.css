@@ -13,6 +13,9 @@
   box-sizing: border-box;
 }
 
+a {
+  cursor: pointer;
+}
 /* navbar */
 
 .nav-div {
